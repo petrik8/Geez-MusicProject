@@ -29,18 +29,15 @@ logging.basicConfig(level=logging.INFO)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Hai {message.from_user.first_name}.\n
-𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
-Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆, silahkan menghubungi owner.
-</b>""",
+Ini adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 di Group anda, silahkan menghubungi owner.
+Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
+""",
 
 # Edit Yang Seharusnya Lu Edit Aja:D
 # Tapi Jangan di Hapus Special Thanks To nya Yaaa :'D
 
         reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        "Tambahkan saya ke Grup", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
                         "Channel Quotes", url=f"https://t.me/{UPDATES_CHANNEL}"), 
@@ -84,17 +81,13 @@ def map(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [
-            [InlineKeyboardButton("➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-            [InlineKeyboardButton(text = '💬 Channel Updates', url=f"https://t.me/{UPDATES_CHANNEL}"),
-             InlineKeyboardButton(text = '🔰 Group Support', url=f"https://t.me/{SUPPORT_GROUP}")],
-            [InlineKeyboardButton(text = '🛠 Source Code 🛠', url=f"https://{SOURCE_CODE}")],
-            [InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}")]
+            [InlineKeyboardButton(text = '« previous', callback_data = f"help+{pos-1}")]
         ]
     else:
         button = [
             [
-                InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}"),
-                InlineKeyboardButton(text = '»', callback_data = f"help+{pos+1}")
+                InlineKeyboardButton(text = '« previous', callback_data = f"help+{pos-1}"),
+                InlineKeyboardButton(text = 'next »', callback_data = f"help+{pos+1}")
             ],
         ]
     return button
@@ -107,19 +100,7 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
-        reply_markup=InlineKeyboardMarkup(
-            [   
-                [    
-                    InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
-                    ),
-                    InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
-                    )
-                ]
-            ]
-        )
+        "❇️ **FH MUSIK TELAH AKTIF**",
     )
 
 
@@ -130,16 +111,16 @@ async def start(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
+        """Klik tombol dibawah ini""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/Vckyouuu/32"
+                        "Cara penggunaan BOT", url="https://t.me/fhmusicbot88/4"
                     )
                 ]
             ]
-        ),
+        )
     )  
 
 
@@ -149,15 +130,12 @@ async def help(client: Client, message: Message):
     & ~ filters.edited
 )
 async def reload(client: Client, message: Message):
-    await message.reply_text("""✅ Bot **berhasil dimulai ulang!**\n\n• **Daftar admin** telah **diperbarui**""",
+    await message.reply_text("""❇️ Bot musik siap digunakan""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Group Support", url=f"https://t.me/GeezSupportGroup"
-                    ),
-                    InlineKeyboardButton(
-                        "Created By", url=f"https://t.me/VckyouuBitch"
+                        "Cara penggunaan", url=f"https://t.me/fhmusicbot88/4"
                     )
                 ]
             ]
