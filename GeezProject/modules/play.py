@@ -422,21 +422,21 @@ async def play(_, message: Message):
             if administrator == message.from_user.id:
                 if message.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        "<b>Ingatlah untuk menambahkan Assistant bot ke Channel Anda</b>",
+                        "<b>Ingatlah untuk menambahkan Music Assistant ke Channel Anda</b>",
                     )
                     pass
                 try:
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Tambahkan saya sebagai admin grup Anda terlebih dahulu</b>",
+                        "<b>Tambahkan saya sebagai admin terlebih dahulu</b>",
                     )
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await lel.edit(
-                        "<b>Assistant Bot berhasil bergabung dengan Group anda</b>",
+                        "<b>Music Assistant berhasil bergabung dengan Group anda</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -587,8 +587,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:40]}]({url})\n**Durasi :** {duration}\n**Status :** Antrian Ke `{position}`\n" \
-                    + f"Permintaan dari {message.from_user.mention}",
+            caption = f"**♪** [{title[:50]}]({url})\nDurasi : {duration}\nStatus : Antrian Ke `{position}`\n" \
+                    + f"➥ Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -608,8 +608,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:40]}]({url})\n**Durasi :** {duration}\n**Status :** Sedang Memutar\n" \
-                    + f"Permintaan dari {message.from_user.mention}",
+            caption = f"**♪** [{title[:50]}]({url})\nDurasi : {duration}\nStatus : Sedang Memutar\n" \
+                    + f"➥ Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
