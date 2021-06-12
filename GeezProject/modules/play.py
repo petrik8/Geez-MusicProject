@@ -118,12 +118,11 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title: {title}", (51, 215, 255), font=font)
-    draw.text((205, 590), f"Duration: {duration}", (255, 255, 255), font=font)
-    draw.text((205, 630), f"Views: {views}", (255, 255, 255), font=font)
+    draw.text((205, 550), f"Title : {title}", (218, 165, 32), font=font)
+    draw.text((205, 590), f"Duration : {duration}", (255, 255, 255), font=font)
     draw.text(
         (205, 670),
-        f"Added By: {requested_by}",
+        f"Request by {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -488,14 +487,10 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ **Video dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak boleh diputar!**"
+                f"**Video dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak boleh diputar!**"
             )
         keyboard = InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton("Playlist", callback_data="playlist"),
-                    InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
-                ],
                 [InlineKeyboardButton(text="Close", callback_data="cls")],
             ]
         )
@@ -531,7 +526,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan"
+                "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas."
             )
             print(str(e))
             return
@@ -539,10 +534,6 @@ async def play(_, message: Message):
         dlurl=dlurl.replace("youtube","youtubepp")
         keyboard = InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton("Daftar Putar", callback_data="playlist"),
-                    InlineKeyboardButton("Support Channel", url="https://t.me/GeezProjects"),
-                ],
                 [InlineKeyboardButton(text="Close", callback_data="cls")],
             ]
         )
@@ -579,10 +570,6 @@ async def play(_, message: Message):
         dlurl=dlurl.replace("youtube","youtubepp")
         keyboard = InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton("Daftar Putar", callback_data="playlist"),
-                    InlineKeyboardButton("Support Channel", url="https://t.me/GeezProjects"),
-                ],
                 [InlineKeyboardButton(text="Close", callback_data="cls")],
             ]
         )
@@ -600,8 +587,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:23]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Antrian Ke `{position}`\n" \
-                    + f"🎼 **Request Dari:** {message.from_user.mention}",
+            caption = f"**♪** [{title[:40]}]({url})\n**Durasi :** {duration}\n**Status :** Antrian Ke `{position}`\n" \
+                    + f"Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -621,8 +608,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:23]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Sedang Memutar\n" \
-                    + f"🎼 **Request Dari:** {message.from_user.mention}",
+            caption = f"**♪** [{title[:40]}]({url})\n**Durasi :** {duration}\n**Status :** Sedang Memutar\n" \
+                    + f"Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
