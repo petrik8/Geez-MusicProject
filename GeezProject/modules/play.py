@@ -118,11 +118,10 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 550), f"Title : {title}", (218, 165, 32), font=font)
-    draw.text((205, 590), f"Duration : {duration}", (255, 255, 255), font=font)
+    draw.text((205, 590), f"Title : {title}", (218, 165, 32), font=font)
     draw.text(
-        (205, 670),
-        f"Request by {requested_by}",
+        (205, 630),
+        f"Duration : {duration}",
         (255, 255, 255),
         font=font,
     )
@@ -489,11 +488,6 @@ async def play(_, message: Message):
             raise DurationLimitError(
                 f"**Video dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak boleh diputar!**"
             )
-        keyboard = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton(text="Close", callback_data="cls")],
-            ]
-        )
         file_name = get_file_name(audio)
         title = file_name
         thumb_name = "https://telegra.ph/file/ab13882bb05849b6ba170.jpg"
@@ -532,11 +526,7 @@ async def play(_, message: Message):
             return
         dlurl=url
         dlurl=dlurl.replace("youtube","youtubepp")
-        keyboard = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton(text="Close", callback_data="cls")],
-            ]
-        )
+        
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await convert(youtube.download(url))        
@@ -568,11 +558,7 @@ async def play(_, message: Message):
             return
         dlurl=url
         dlurl=dlurl.replace("youtube","youtubepp")
-        keyboard = InlineKeyboardMarkup(
-            [
-                [InlineKeyboardButton(text="Close", callback_data="cls")],
-            ]
-        )
+        
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await convert(youtube.download(url))
@@ -587,8 +573,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪ [{title[:60]}]({url})**\nDurasi : {duration}\nStatus : Antrian Ke `{position}`\n" \
-                    + f"➥ **Permintaan dari {message.from_user.mention}**",
+            caption = f"**♪** [{title[:60]}]({url})\n**Status : Antrian Ke `{position}`**\n" \
+                    + f"➥ **Permintaan dari : {message.from_user.mention}**",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -608,8 +594,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪ [{title[:60]}]({url})**\nDurasi : {duration}\nStatus : Sedang Memutar\n" \
-                    + f"➥ **Permintaan dari {message.from_user.mention}**",
+            caption = f"**♪** [{title[:60]}]({url})\n**Status : Sedang Memutar**\n" \
+                    + f"➥ **Permintaan dari : {message.from_user.mention}**",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
