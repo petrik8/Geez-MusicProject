@@ -28,17 +28,9 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Haii {message.from_user.first_name} saya adalah {PROJECT_NAME}\n
-Saya Adalah Bot Music Group, Yang dapat Memutar Lagu di Voice Chat Group Anda Dengan Mudah
-Saya Memiliki Banyak Fitur Seperti :
-• Memutar Musik.
-• Mendownload Lagu.
-• Mencari Lagu Yang ingin di Putar atau di Download.
-• Gunakan Perintah » /help « untuk Mengetahui Fitur Lengkapnya
-
-📌 Special Thanks To : {OWNER}
-
-Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
+        f"""<b>Hai {message.from_user.first_name}.\n
+𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
+Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆, silahkan menghubungi owner.
 </b>""",
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -48,18 +40,12 @@ Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                        "Tambahkan saya ke Grup", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
-                        "💬 Channel Updates", url=f"https://t.me/{UPDATES_CHANNEL}"), 
+                        "Channel Quotes", url=f"https://t.me/{UPDATES_CHANNEL}"), 
                     InlineKeyboardButton(
-                        "🎈 Group Support", url=f"https://t.me/{SUPPORT_GROUP}")
-                ],[
-                    InlineKeyboardButton(
-                        "🛠 Source Code 🛠", url=f"https://{SOURCE_CODE}")
-                ],[
-                    InlineKeyboardButton(
-                        "🎁 Donate", url=f"https://t.me/VckyouuBitch")
+                        "Owner", url=f"https://t.me/{SUPPORT_GROUP}")
                 ]
             ]
         ),
@@ -93,7 +79,7 @@ def help_answer(client, callback_query):
 def map(pos):
     if(pos==1):
         button = [
-            [InlineKeyboardButton(text = 'Next »', callback_data = "help+2")]
+            [InlineKeyboardButton(text = 'next »', callback_data = "help+2")]
         ]
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
