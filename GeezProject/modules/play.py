@@ -526,7 +526,12 @@ async def play(_, message: Message):
             return
         dlurl=url
         dlurl=dlurl.replace("youtube","youtubepp")
-        
+        keyboard = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9")
+                ]
+        )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await convert(youtube.download(url))        
@@ -558,7 +563,12 @@ async def play(_, message: Message):
             return
         dlurl=url
         dlurl=dlurl.replace("youtube","youtubepp")
-        
+        keyboard = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9")
+                ]
+        )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
         file_path = await convert(youtube.download(url))
