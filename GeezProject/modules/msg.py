@@ -20,9 +20,6 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-Berikut cara penggunaan bot ini :
-
-Song Playing
 - /play (judul lagu): memutar lagu melalui Youtube
 - /play (yt url): memutar lagu melalui url Youtube
 - /dplay: memutar lagu melalui Deezer
