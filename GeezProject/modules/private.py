@@ -39,7 +39,7 @@ Ini adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Ji
             [
                 [
                     InlineKeyboardButton(
-                        "Channel Quotes", url=f"https://t.me/{UPDATES_CHANNEL}"), 
+                        "Music Assistant", url=f"https://t.me/{UPDATES_CHANNEL}"), 
                     InlineKeyboardButton(
                         "Owner", url=f"https://t.me/{SUPPORT_GROUP}")
                 ]
