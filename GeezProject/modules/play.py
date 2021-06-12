@@ -529,8 +529,9 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9")
-                ]
+                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9"),
+                ],
+            ]
         )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
@@ -566,8 +567,9 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9")
-                ]
+                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9"),
+                ],
+            ]
         )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
