@@ -529,7 +529,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9"),
+                    InlineKeyboardButton("• PENGOPERASIAN FH MUSIK •", url="https://t.me/katasecangkir/9"),
                 ],
             ]
         )
@@ -567,7 +567,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔊 PENGOPERASIAN FH MUSIK", url="https://t.me/katasecangkir/9"),
+                    InlineKeyboardButton("• PENGOPERASIAN FH MUSIK •", url="https://t.me/katasecangkir/9"),
                 ],
             ]
         )
@@ -585,8 +585,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:60]}]({url})\n**Status : Antrian Ke `{position}`**\n" \
-                    + f"➥ **Permintaan dari : {message.from_user.mention}**",
+            caption = f"**♪** [{title[:60]}]({url})\n➥ Status : Antrian ke `{position}`\n" \
+                    + f"➥ Permintaan dari : {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -606,8 +606,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:60]}]({url})\n**Status : Sedang Memutar**\n" \
-                    + f"➥ **Permintaan dari : {message.from_user.mention}**",
+            caption = f"**♪** [{title[:60]}]({url})\n➥ Status : Sedang memutar\n" \
+                    + f"➥ Permintaan dari : {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
