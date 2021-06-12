@@ -33,7 +33,7 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-                f"☬ 𝙈𝙪𝙨𝙞𝙘 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩 - 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 ☬\nThis is a music service of @MusicFHBot\n┏━━━━━━━━━━━━━━━━━━━━━\n ✦҈͜͡➳ Not a place to chat.\n ✦҈͜͡➳ Don't spam in here.\n ✦҈͜͡➳ Don't share private info in here.\n┗━━━━━━━━━━━━━━━━━━━━━\n\nManaged by : @paatriick",
+                f"☬ 𝙈𝙪𝙨𝙞𝙘 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩 - 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 ☬\nThis is a music service of @fhmusikbot\n┏━━━━━━━━━━━━━━━━━━━━━\n ✦҈͜͡➳ Not a place to chat.\n ✦҈͜͡➳ Don't spam in here.\n ✦҈͜͡➳ Don't share private info in here.\n┗━━━━━━━━━━━━━━━━━━━━━\n\nManaged by : @paatriick",
             )
             return
 
