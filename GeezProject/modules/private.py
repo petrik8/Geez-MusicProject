@@ -134,7 +134,7 @@ async def reload(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Cara penggunaan", url=f"https://t.me/fhmusicbot88/4"
+                        "Cara penggunaan", url=f"https://t.me/katasecangkir/9"
                     )
                 ]
             ]
