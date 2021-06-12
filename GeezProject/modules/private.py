@@ -29,8 +29,7 @@ logging.basicConfig(level=logging.INFO)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Hai {message.from_user.first_name}.\n
-Ini adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 di Group anda, silahkan menghubungi owner.
-Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
+Ini adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 di Group anda, silahkan menghubungi owner. Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
 """,
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -100,7 +99,7 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "❇️ **FH MUSIK TELAH AKTIF**",
+        "✅ **FH MUSIK TELAH AKTIF**",
     )
 
 
@@ -130,7 +129,7 @@ async def help(client: Client, message: Message):
     & ~ filters.edited
 )
 async def reload(client: Client, message: Message):
-    await message.reply_text("""❇️ Bot musik siap digunakan""",
+    await message.reply_text("""🔊 **BOT MUSIK SIAP DIGUNAKAN**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
