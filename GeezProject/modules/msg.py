@@ -20,10 +20,11 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-- /play (judul lagu): memutar lagu melalui Youtube
-- /play (yt url): memutar lagu melalui url Youtube
-- /dplay: memutar lagu melalui Deezer
-- /splay: memutar lagu melalui Jio Saavn
+- /search (nama lagu): mencari lagu dari Youtube
+- /play (nama lagu): memutar lagu dari Youtube
+- /play (url ytb): memutar lagu dari url Youtube
+- /song (nama lagu): mendownload lagu dari YouTube 
+- /video (nama lagu): mendownload video dari YouTube
 """,
 
 f"""
@@ -31,6 +32,7 @@ f"""
 - /pause: jeda pemutaran lagu saat ini
 - /resume: melanjutkan pemutaran lagu
 - /end: menghentikan pemutaran lagu
+
 - /userbotjoin: mengundang asisten musik
 - /admincache: memperbarui admin list
 """
