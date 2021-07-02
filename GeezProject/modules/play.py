@@ -118,10 +118,10 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((205, 590), f"Title : {title}", (253, 215, 3), font=font)
+    draw.text((205, 590), f"Judul : {title}", (253, 215, 3), font=font)
     draw.text(
         (205, 630),
-        f"Duration : {duration}",
+        f"Durasi : {duration}",
         (255, 255, 255),
         font=font,
     )
@@ -141,9 +141,9 @@ async def playlist(client, message):
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "**Lagu Yang Sedang dimainkan** di {}".format(message.chat.title)
+    msg = "**Lagu yang sedang diputar** di {}".format(message.chat.title)
     msg += "\n• " + now_playing
-    msg += "\n• Req by " + by
+    msg += "\n• Permintaan dari " + by
     temp.pop(0)
     if temp:
         msg += "\n\n"
@@ -152,7 +152,7 @@ async def playlist(client, message):
             name = song[0]
             usr = song[1].mention(style="md")
             msg += f"\n• {name}"
-            msg += f"\n• Req by {usr}\n"
+            msg += f"\n• Permintaan dari {usr}\n"
     await message.reply_text(msg)
 
 
@@ -203,7 +203,7 @@ async def ee(client, message):
     if stats:
         await message.reply(stats)
     else:
-        await message.reply("**Silahkan Nyalakan dulu VCG nya!**")
+        await message.reply("**Obrolan suara belum dibuka**")
 
 
 @Client.on_message(filters.command("player") & filters.group & ~filters.edited)
@@ -242,9 +242,9 @@ async def p_cb(b, cb):
             temp.append(t)
         now_playing = temp[0][0]
         by = temp[0][1].mention(style="md")
-        msg = "**Lagu Yang Sedang dimainkan** di {}".format(cb.message.chat.title)
+        msg = "**Lagu yang sedang diputar** di {}".format(cb.message.chat.title)
         msg += "\n• " + now_playing
-        msg += "\n• Req by " + by
+        msg += "\n• Permintaan dari " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
@@ -253,7 +253,7 @@ async def p_cb(b, cb):
                 name = song[0]
                 usr = song[1].mention(style="md")
                 msg += f"\n• {name}"
-                msg += f"\n• Req by {usr}\n"
+                msg += f"\n• Permintaan dari {usr}\n"
         await cb.message.edit(msg)
 
 
@@ -310,9 +310,9 @@ async def m_cb(b, cb):
             temp.append(t)
         now_playing = temp[0][0]
         by = temp[0][1].mention(style="md")
-        msg = "**Now Playing** in {}".format(cb.message.chat.title)
+        msg = "**Lagu yang sedang diputar** in {}".format(cb.message.chat.title)
         msg += "\n- " + now_playing
-        msg += "\n- Req by " + by
+        msg += "\n- Permintaan dari " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
@@ -486,7 +486,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**Video dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak boleh diputar!**"
+                f"**Lagu dengan durasi lebih dari** `{DURATION_LIMIT}` **menit tidak dapat diputar!**"
             )
         file_name = get_file_name(audio)
         title = file_name
@@ -529,7 +529,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• PENGOPERASIAN FH MUSIK •", url="https://t.me/katasecangkir/9"),
+                    InlineKeyboardButton("• FH MUSIK PROCEDURE •", url="https://t.me/katasecangkir/9"),
                 ],
             ]
         )
@@ -567,7 +567,7 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• PENGOPERASIAN FH MUSIK •", url="https://t.me/katasecangkir/9"),
+                    InlineKeyboardButton("• FH MUSIK PROCEDURE •", url="https://t.me/katasecangkir/9"),
                 ],
             ]
         )
@@ -585,8 +585,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:60]}]({url})\n➥ Status : Antrian ke `{position}`\n" \
-                    + f"➥ Permintaan dari : {message.from_user.mention}",
+            caption = f"**☛** [{title[:60]}]({url})\n• Status : Antrian ke `{position}`\n" \
+                    + f"• Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
@@ -606,8 +606,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"**♪** [{title[:60]}]({url})\n➥ Status : Sedang memutar\n" \
-                    + f"➥ Permintaan dari : {message.from_user.mention}",
+            caption = f"**☛** [{title[:60]}]({url})\n• Status : Sedang memutar\n" \
+                    + f"• Permintaan dari {message.from_user.mention}",
                    reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
