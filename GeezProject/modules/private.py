@@ -28,8 +28,7 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Hai {message.from_user.first_name}.\n
-Ini adalah sebuah bot yang dirancang sebagai pemutar musik di Group telegram. Jika ingin menggunakan 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 di Group anda, silahkan menghubungi owner. Gunakan perintah /help untuk mengetahui cara penggunaan bot ini.
+        f"""<b>Hallo {message.from_user.first_name} selamat datang di 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆. Ini adalah bot layanan musik untuk memutar lagu dari Youtube di grup Telegram. Bot ini tidak dapat ditambahkan ke grup tanpa diizinkan oleh owner, dengan tujuan mengurangi penggunaan bot secara berlebihan yang akan mempengaruhi kualitas saat memutar lagu. Silahkan hubungi owner untuk menggunakan bot ini dan ketik /help untuk cara pengoperasiannya.
 """,
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -110,12 +109,12 @@ async def start(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        """Klik tombol dibawah ini""",
+        """Klik tombol dibawah ini untuk cara pengoperasian bot musik""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Cara penggunaan BOT", url="https://t.me/katasecangkir/9"
+                        "FH MUSIK", url="https://t.me/katasecangkir/9"
                     )
                 ]
             ]
@@ -129,12 +128,12 @@ async def help(client: Client, message: Message):
     & ~ filters.edited
 )
 async def reload(client: Client, message: Message):
-    await message.reply_text("""🔊 **BOT MUSIK SIAP DIGUNAKAN**""",
+    await message.reply_text("""🔊 **BOT MUSIK SIAP DIGUNAKAN\nklik dibawah ini untuk cara pengoperasian**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Cara penggunaan", url=f"https://t.me/katasecangkir/9"
+                        "FH MUSIK", url=f"https://t.me/katasecangkir/9"
                     )
                 ]
             ]
