@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Hallo {message.from_user.first_name} selamat datang di 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆. Ini adalah bot layanan musik untuk memutar lagu dari Youtube di grup Telegram. Bot ini tidak dapat ditambahkan ke grup tanpa diizinkan oleh owner, dengan tujuan mengurangi penggunaan bot secara berlebihan yang akan mempengaruhi kualitas saat memutar lagu. Silahkan hubungi owner untuk menggunakan bot ini dan ketik /help untuk cara pengoperasiannya.
+        f"""<b>Hai {message.from_user.first_name}, selamat datang di **Lagu Kamu**.\nIni adalah bot untuk mendownload lagu dan video dari Youtube, untuk caranya silahkan gunakan perintah seperti dibawah ini:\n\n - /song (judul lagu) : untuk download lagu dari Youtube.\n - /video (judul video) : untuk download video dari Youtube.
 """,
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -38,9 +38,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Music Assistant", url=f"https://t.me/{UPDATES_CHANNEL}"), 
-                    InlineKeyboardButton(
-                        "Owner", url=f"https://t.me/{SUPPORT_GROUP}")
+                        "Join Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
                 ]
             ]
         ),
