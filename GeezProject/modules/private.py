@@ -38,7 +38,7 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "👨🏻‍💻 Pengelola bot", url=f"https://instagram.com/ahmd_rozii")
+                        "👨🏻‍💻 Bot Owner", url=f"https://instagram.com/ahmd_rozii")
                 ]
             ]
         ),
