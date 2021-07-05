@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Selamat datang di **@LaguKamuBot**.\n**Lagu Kamu** adalah layanan musik di telegram untuk mendownload lagu dan video dari youtube.\nTekan /help untuk mulai mendownload..
+        f"""<b>Selamat datang di @LaguKamuBot, ini adalah layanan musik telegram untuk mendownload lagu dan video dari youtube.\nTekan /help untuk mulai mendownload.
 """,
 
 # Edit Yang Seharusnya Lu Edit Aja:D
