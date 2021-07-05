@@ -27,6 +27,6 @@ f"""
 """,
 
 f"""
-Masukkan judul secara detail untuk mendapatkan lagu dan video yang sesuai. Gunakan perintah /search untuk untuk mendapatkan link lagu dan video yang kamu minta. 
+Masukkan judul secara detail untuk mendapatkan lagu dan video yang sesuai. Gunakan perintah /search untuk mendapatkan link lagu dan video yang kamu minta. 
 """
       ]
