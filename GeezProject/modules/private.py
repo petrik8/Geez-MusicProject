@@ -28,7 +28,7 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Hai {message.from_user.first_name}, selamat datang di **Lagu Kamu**.\nIni adalah bot untuk mendownload lagu dan video dari Youtube, untuk caranya silahkan gunakan perintah seperti dibawah ini:\n\n - /song (judul lagu) : untuk download lagu dari Youtube.\n - /vsong (judul video) : untuk download video dari Youtube.\n - /song (link) : download lagu dari link Youtube.\n - /vsong (link) : download video dari link Youtube.\n\n⚠️ Masukkan judul dengan benar.
+        f"""<b>Selamat datang di **@LaguKamuBot**.\n**Lagu Kamu** adalah layanan musik di telegram untuk mendownload lagu dan video dari youtube.\nTekan /help untuk mulai mendownload..
 """,
 
 # Edit Yang Seharusnya Lu Edit Aja:D
