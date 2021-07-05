@@ -20,20 +20,13 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-- /search (nama lagu): mencari lagu dari Youtube
-- /play (nama lagu): memutar lagu dari Youtube
-- /play (url ytb): memutar lagu dari url Youtube
-- /song (nama lagu): mendownload lagu dari YouTube 
-- /video (nama lagu): mendownload video dari YouTube
+- /song (judul lagu): download lagu dari YouTube 
+- /song (link youtube): download lagu dari link YouTube
+- /vsong (judul video): download video dari YouTube 
+- /vsong (link youtube): download video dari link YouTube
 """,
 
 f"""
-- /skip: pindah ke lagu berikutnya
-- /pause: jeda pemutaran lagu saat ini
-- /resume: melanjutkan pemutaran lagu
-- /end: menghentikan pemutaran lagu
-
-- /userbotjoin: mengundang asisten musik
-- /admincache: memperbarui admin list
+Masukkan judul secara detail untuk mendapatkan lagu dan video yang sesuai. Gunakan perintah /search untuk untuk mendapatkan link lagu dan video yang kamu minta. 
 """
       ]
