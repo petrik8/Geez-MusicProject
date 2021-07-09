@@ -33,7 +33,7 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-                f"☬ 𝙈𝙪𝙨𝙞𝙘 𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩 - 𝙁𝙃 𝙈𝙐𝙎𝙄𝙆 ☬\nThis is a music service of @fhmusikbot\n┏━━━━━━━━━━━━━━━━━━━━━\n ✦҈͜͡➳ Not a place to chat.\n ✦҈͜͡➳ Don't spam in here.\n ✦҈͜͡➳ Don't share private info in here.\n┗━━━━━━━━━━━━━━━━━━━━━\n\nManaged by : @paatriick",
+                f"☬ Pesan kamu dibalas otomatis ☬\n\nSilahkan tunggu [@fhroziiiii] untuk membalasnya, sambil menunggu kamu bisa mengunjungi botnya dibawah ini:\n✦ @LaguKamuBot : untuk download lagu\n✦ @KataKamuBot : untuk mengirim quotes\n✦ @KataSecangkir : channel quotes telegram",
             )
             return
 
